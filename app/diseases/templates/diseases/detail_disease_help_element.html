@@ -1,0 +1,11 @@
+{% if list_fruit %}
+<ul>
+    <h1>The Corresponding Amount For a Portion of 100 g Fruit's</h1>
+    <h2>Element: {{ elem.name }}. Unit of Measurement({{elem.um}})</h2>
+    {% for fruit in list_fruit %}
+    <li>{{fruit.fruit}}: {{fruit.amount}}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No fruits are available.</p>
+{% endif %}

@@ -1,0 +1,9 @@
+{% if fruit_list %}
+<ul>
+    {% for fruit in fruit_list %}
+    <li><a href="{% url 'detail_fruit' fruit.id %}">{{ fruit.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No fruits are available.</p>
+{% endif %}

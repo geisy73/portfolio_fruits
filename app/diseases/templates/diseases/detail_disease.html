@@ -1,0 +1,8 @@
+<h1>{{ disease.name }}</h1>
+<h2>Description:{{ disease.descrip }}</h2>
+<h3>Elements that helps:</h3>
+<ul>
+    {% for disease_element in disease.disease_element_set.all %}
+    <li>{{ disease_element.element }}</li>
+    {% endfor %}
+</ul>

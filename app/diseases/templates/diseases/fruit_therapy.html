@@ -1,0 +1,32 @@
+{% block content %}
+
+<head>
+    <li><a href="{% url 'composition' %}">All Compositions</a></li>
+    <li><a href="{% url 'element' %}">All Elements</a></li>
+    <li><a href="{% url 'fruit' %}">All Fruits</a></li>
+    <li><a href="{% url 'disease' %}">All Diseases</a></li>
+    <li><a href="{% url 'fruit_help' %}">Diseases helped by fruits by Elements</a></li>
+    <li><a href="{% url 'all_fruit_disease' %}">Best fruits for a Diseases</a></li>
+
+</head>
+
+<h1>Fruit_Therapy Home</h1>
+
+<p>Welcome to <em>Fruit_Therapy</em>, A Django API to make the consume of the Fruits a way to improves Diseases</p>
+
+<h2>Dynamic content</h2>
+
+<p>The Fruit_Therapy has the following record counts:</p>
+<ul>
+    <li><strong>Diseases:</strong> {{ num_diseases }}</li>
+    <li><strong>Fruits:</strong> {{ num_fruits }}</li>
+</ul>
+
+{% if user.is_authenticated %}
+<li>User: {{ user.get_username }}</li>
+<li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+{% else %}
+<li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+{% endif %}
+</ul>
+{% endblock %}

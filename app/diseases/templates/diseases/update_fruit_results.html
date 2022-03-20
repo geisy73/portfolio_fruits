@@ -1,0 +1,7 @@
+<h1>{{ element.name }}</h1>
+
+<ul>
+    {% for fruit_element in element.fruit_element_set.all %}
+    <li>{{ fruit_element.amount }} -- {{ fruit_element.fruit }}</li>
+    {% endfor %}
+</ul>

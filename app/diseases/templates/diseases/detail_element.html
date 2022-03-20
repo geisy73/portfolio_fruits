@@ -1,0 +1,6 @@
+<h1>{{ element.name }}</h1>
+<ul>
+    {% for disease_element in element.disease_element_set.all %}
+    <li>{{ disease_element.disease }}</li>
+    {% endfor %}
+</ul>

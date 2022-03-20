@@ -1,0 +1,16 @@
+<form action="{% url 'update_fruit' element.id %}" method="post">
+
+    {% csrf_token %}
+    <fieldset>
+        <legend>
+            <h1>{{ element.name }}</h1>
+        </legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        {% for fruit_element in element.fruit_element_set.all %}
+        <input type="radio" name="fruit_element" id="fruit_element{{ forloop.counter }}" value="{{ fruit_element.id }}">
+        <label for="fruit_element{{ forloop.counter }}">{{fruit_element.fruit}}</label>
+        <input id="fruit_element" type="text" name="amount" value="{{ fruit_element.amount }}"><br>
+        {% endfor %}
+    </fieldset>
+    <input type="submit" value="Update">
+</form>

@@ -1,0 +1,9 @@
+{% if dis_list %}
+<ul>
+    {% for disease in dis_list %}
+    <li><a href="{% url 'all_fruit_disease_detail' disease.id %}">{{ disease.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No Diseases are available.</p>
+{% endif %}

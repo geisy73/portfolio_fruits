@@ -1,0 +1,12 @@
+{% block content %}
+
+<h1>Delete Fruit</h1>
+
+<p>Are you sure you want to delete the fruit: {{ fruit.name }}?</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" action="" value="Yes, delete." />
+</form>
+
+{% endblock %}

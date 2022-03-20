@@ -1,0 +1,8 @@
+<h1>{{ disease.name }}</h1>
+<ul>
+    {% for disease_element in disease.disease_element_set.all %}
+    <h2>{{disease_element.element}}</h2>
+    <li><a href="{% url 'detail_disease_help_element' disease_element.disease.id disease_element.element.id %}">
+            Order_By_Amount's_Fruits_That_Help</a></li>
+    {% endfor %}
+</ul>

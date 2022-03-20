@@ -1,0 +1,9 @@
+{% if disease_list %}
+<ul>
+    {% for diseasef in disease_list %}
+    <li><a href="{% url 'detail' diseasef.id %}">{{ diseasef.name }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No diseases are available.</p>
+{% endif %}
