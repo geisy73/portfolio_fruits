@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'my_fruits_db',
         'USER': 'postgres',
         'PASSWORD': 'admin123',
-        'HOST': '127.0.0.1',
+        'HOST': 'myfruitsdb.cjtpb9pqzxt8.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
